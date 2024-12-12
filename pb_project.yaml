@@ -1,0 +1,37 @@
+# Project name name
+name: materfoundation_test
+# Project's yaml schema version
+schema_version: 84
+# WH Connection Profile to use.
+connection: materfoundation_connection
+# Locks the UI to use this version of the profiles library
+python_requirements:
+  - profiles-rudderstack>=0.13.0
+# Model folders to use.
+model_folders:
+  - models
+# The id types are inherited from the library package listed below.
+# To add / extend filters, check out the section on extends in id_types in documentation.
+id_types:
+  - name: email
+  - name: mobile_phone
+  - name: crm_contact_id
+  - name: funraisin_contact_id
+  - name: jumbo_contact_id
+  - name: patient_contact_id
+# Entities in this project and their ids.
+entities:
+  - name: user
+    id_stitcher: models/user_id_stitcher
+    id_types:
+      - email
+      - mobile_phone
+      - crm_contact_id
+      - funraisin_contact_id
+      - jumbo_contact_id
+      - patient_contact_id
+    feature_views:
+      using_ids:
+        - id: email
+          name: customer_profile_by_email
+retention_period: 720h0m0s

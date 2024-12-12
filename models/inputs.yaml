@@ -1,0 +1,63 @@
+inputs:
+  - name: crm
+    app_defaults:
+      table: materfoundation_poc.source_data.crm_data
+      # occurred_at_col: last_modified
+      ids:
+        - select: "lower(email)"
+          type: email
+          entity: user
+        - select: "mobile_phone"
+          type: mobile_phone
+          entity: user
+        - select: "funraisin_id"
+          type: funraisin_contact_id
+          entity: user
+        - select: "jumbo_id"
+          type: jumbo_contact_id
+          entity: user
+        - select: "patient_id"
+          type: patient_contact_id
+          entity: user
+  - name: funraisin
+    app_defaults:
+      table: materfoundation_poc.source_data.funraisin_data
+      occurred_at_col: last_modified
+      ids:
+        - select: "lower(email)"
+          type: email
+          entity: user
+        - select: "mobile_phone"
+          type: mobile_phone
+          entity: user
+        - select: "contact_id"
+          type: funraisin_contact_id
+          entity: user
+  - name: jumbo
+    app_defaults:
+      table: materfoundation_poc.source_data.jumbo_data
+      occurred_at_col: last_modified
+      ids:
+        - select: "lower(email)"
+          type: email
+          entity: user
+        - select: "mobile_phone"
+          type: mobile_phone
+          entity: user
+        - select: "contact_id"
+          type: jumbo_contact_id
+          entity: user
+  - name: patient
+    app_defaults:
+      table: materfoundation_poc.source_data.patient_data
+      occurred_at_col: last_modified
+      ids:
+        - select: "lower(email)"
+          type: email
+          entity: user
+        - select: "mobile_phone"
+          type: mobile_phone
+          entity: user
+        - select: "contact_id"
+          type: patient_contact_id
+          entity: user
